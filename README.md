@@ -1,37 +1,56 @@
 # Cyberpunk Noir - Obsidian Theme
 
-A dark, minimalist cyberpunk theme for Obsidian with enhanced code blocks and neon aesthetics.
+A dark, minimalist cyberpunk theme for Obsidian with enhanced code blocks, neon aesthetics, and CRT effects.
 
-![Theme Preview](screenshots/preview.png)
+![Theme Showcase](screenshots/Theme-Showcase-gif.gif)
+
+<div align="center">
+
+### 📡 **Incoming Transmission** 📡
+**Enjoying the neon vibes?**  
+Inject a ⭐ **Star** into the mainframe to boost the signal!  
+*It helps other Netrunners find this safehouse.*
+
+</div>
 
 ## 🎨 Features
 
-- **Dark Minimalist Design**: Clean interface with a cyberpunk aesthetic
-- **Enhanced Code Blocks**: Glowing borders, syntax highlighting, and neon accents
-- **Cyberpunk Color Palette**: Pink, cyan, and purple neon colors
-- **Optimized Typography**: Better readability with custom font support
-- **Glowing Effects**: Subtle shadows and glows on interactive elements
-- **Custom Scrollbars**: Styled with theme colors
-- **Full Obsidian Support**: Styled for all major UI elements
+- **Dark Minimalist Design**: Deep blue/black backgrounds with high-contrast neon accents.
+- **Neon Beam Cursor**: 3px wide glowing cursor that ensures you never lose your place.
+- **Cyberpunk Code Blocks**:
+    - CRT Scanline background texture.
+    - Neon styling for scrollbars and copy buttons.
+    - Glassmorphic look.
+- **Visual Hierarchy**: Distinct colors for all heading levels (H1-H6).
+- **Keyboard Styling**: Custom `<kbd>` styling for shortcuts.
+- **Optimized Typography**: Variable font sizes for better readability.
+- **Accessible**: Full support for `prefers-reduced-motion` to disable animations.
+- **Hardware Efficient**: Optimized CSS that runs smoothly on most devices.
+
+## 📸 Functionality Showcase
+
+### Code Blocks & Scanlines
+*Featuring neon scrollbars and scanline texture*
+![Code Blocks](screenshots/codeblock.png)
+
+### Live Preview Editor
+*Clean, borderless editing experience*
+![Editor View](screenshots/editor-view.png)
+
+### Graph View
+*Neon connected nodes*
+![Graph View](screenshots/graph-gif.gif)
+
+### Reading Mode
+![Preview](screenshots/preview.png)
 
 ## 🎯 Color Palette
 
-- **Primary Pink**: `#ff006e` - Main accent color
-- **Cyan**: `#00f5ff` - Links and highlights
-- **Purple**: `#b537f2` - Secondary accent
-- **Deep Blue**: `#3a0ca3` - Background accent
-- **Orange**: `#ff9e00` - Numbers and booleans
-
-## 📸 Screenshots
-
-### Code Blocks
-![Code Blocks](screenshots/codeblocks.png)
-
-### Headers and Typography
-![Headers](screenshots/headers.png)
-
-### Full Interface
-![Interface](screenshots/interface.png)
+- **Neon Pink**: `#ff0080` - Primary interaction color
+- **Cyan**: `#00ffff` - Text accents and links
+- **Neon Purple**: `#b537f2` - Secondary accents
+- **Neon Green**: `#00ff41` - H4 sub-headings
+- **Background**: `#050714` - Deep space blue-black
 
 ## 🚀 Installation
 
@@ -45,94 +64,42 @@ A dark, minimalist cyberpunk theme for Obsidian with enhanced code blocks and ne
 
 ### Manual Installation
 
-1. Download the latest release from [Releases](https://github.com/yourusername/obsidian-cyberpunk-theme/releases)
+1. Download the latest release from [Releases](https://github.com/zoo-hair/obsidian-cyberpunk-theme/releases)
 2. Extract the files
 3. Copy `theme.css` and `manifest.json` to your vault's `.obsidian/themes/Cyberpunk-Noir/` folder
 4. Open Obsidian Settings → Appearance → Themes
 5. Select "Cyberpunk Noir" from the dropdown
 
-### For Development
-
-```bash
-# Clone this repository
-git clone https://github.com/yourusername/obsidian-cyberpunk-theme.git
-
-# Navigate to your vault's themes folder
-cd /path/to/your/vault/.obsidian/themes/
-
-# Create symlink (or copy files)
-ln -s /path/to/obsidian-cyberpunk-theme Cyberpunk-Noir
-```
-
 ## 🎨 Customization
 
-You can customize the theme by editing the CSS variables at the top of `theme.css`:
+The theme uses CSS variables that you can override with the **Style Settings** plugin (compatibility coming soon) or by adding a CSS snippet:
 
 ```css
-.theme-dark {
-  --cyber-pink: #ff006e;      /* Change primary accent */
-  --cyber-cyan: #00f5ff;      /* Change link color */
-  --cyber-purple: #b537f2;    /* Change secondary accent */
-  --bg-primary: #0a0e27;      /* Change main background */
-  /* ... and more */
+body {
+  --neon-pink: #ff0080;
+  --neon-cyan: #00ffff;
+  --font-text: 'your-font-here', sans-serif;
 }
 ```
 
-## 💡 Recommended Plugins
-
-This theme works great with:
-
-- **Code Block Enhancer** - Additional code block features
-- **Iconize** - Custom icons for folders and files
-- **Style Settings** - Live theme customization (coming soon)
-
-## 🔤 Recommended Fonts
-
-For the best experience, install these fonts:
-
-- **Fira Code** - For code blocks (supports ligatures)
-- **JetBrains Mono** - Alternative monospace font
-- **Inter** or **SF Pro** - For UI text
-
-## 🐛 Known Issues
-
-- Some community plugins may override theme styles
-- Graph view colors may need adjustment for very large graphs
-
-## ✨ Performance
-
-This theme has been optimized for performance:
-- Reduced glow effects for better FPS
-- Efficient CSS selectors
-- No heavy animations
-- Mobile-friendly asset sizes
-
 ## 🔌 Plugin Compatibility
 
-Tested and compatible with:
-- Dataview
-- Calendar
-- Kanban
-- Tasks
-- Advanced Tables
-- Excalidraw
-- Templater
-- Mind Map
-- Outliner
+Tested and optimized for:
+- **Dataview**
+- **Calendar** (Custom neon styling included)
+- **Kanban**
+- **Tasks**
+- **Excalidraw**
 
 ## 📝 Changelog
 
-### v1.0.0 (Initial Release)
-- Dark minimalist cyberpunk design
-- Enhanced code blocks with glowing borders
-- Custom syntax highlighting
-- Styled headers, links, lists, and tables
-- Custom scrollbars
-- Mobile optimization
-- Plugin compatibility (Dataview, Calendar, Kanban, Tasks, etc.)
-- Accessibility improvements (focus indicators, reduced motion support)
-- Performance optimizations (reduced glow effects)
-- WCAG AA contrast compliance
+### v1.1.0 (Latest Update)
+- **New Feature**: Neon Beam Cursor (3px width + glow).
+- **New Feature**: CRT Scanlines for Code Blocks.
+- **Improvement**: Fixed file explorer sliding animation bug.
+- **Improvement**: Differentiated H4 color (Neon Green).
+- **Style**: Added `<kbd>` key styling.
+- **Fix**: Removed unwanted borders in Editing Mode.
 
 ## 🤝 Contributing
 
@@ -148,27 +115,6 @@ Contributions are welcome! Please feel free to submit a Pull Request.
 
 This theme is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
-## 🙏 Acknowledgments
-
-- Inspired by cyberpunk aesthetics and neon noir themes
-- Built for the amazing Obsidian community
-- Thanks to all theme creators who shared their knowledge
-
-## 💬 Support
-
-If you enjoy this theme, consider:
-
-- ⭐ Starring the repository
-- 🐛 Reporting bugs via [Issues](https://github.com/yourusername/obsidian-cyberpunk-theme/issues)
-- 💡 Suggesting features
-- ☕ [Buying me a coffee](https://buymeacoffee.com/yourusername)
-
-## 📧 Contact
-
-- GitHub: [@zoo-hair](https://github.com/zoo-hair)
-
-
-
 ---
 
-Made with 💜 for the Obsidian community
+Made with 💜 by [Juhair Islam Sami](https://github.com/zoo-hair)
