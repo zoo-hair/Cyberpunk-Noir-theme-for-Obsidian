@@ -1,4 +1,4 @@
-# Cyberpunk Noir - Obsidian Theme
+# Cyberpunk-Noir - Obsidian Theme
 
 A dark, minimalist cyberpunk theme for Obsidian with enhanced code blocks, neon aesthetics, and CRT effects.
 
