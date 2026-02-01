@@ -1,0 +1,574 @@
+/*
+Theme: Cyberpunk Noir
+Author: Juhair Islam Sami
+Version: 1.0.0
+Description: A dark minimalist cyberpunk theme with enhanced code blocks
+*/
+
+/* ====================================
+        CYBERPUNK COLOR PALETTE
+   ==================================== */
+
+.theme-dark {
+  /* Primary cyberpunk colors */
+  --cyber-pink: #ff006e;
+  --cyber-cyan: #00f9ff;
+  --cyber-purple: #b537f2;
+  --cyber-blue: #3a0ca3;
+  --cyber-orange: #ff9e00;
+  
+  /* Background colors */
+  --bg-primary: #0a0e27;
+  --bg-secondary: #10162f;
+  --bg-tertiary: #1a2142;
+  --bg-hover: #252d4d;
+  
+  /* Text colors */
+  --text-primary: #e0e6ff;
+  --text-secondary: #9ca3c7;
+  --text-muted: #6b7394;
+  --text-accent: var(--cyber-cyan);
+  
+  /* Accent colors */
+  --accent-color: var(--cyber-pink);
+  --accent-hover: #ff1a7f;
+  
+  /* ====================================
+          OBSIDIAN CORE VARIABLES
+     ==================================== */
+  
+  /* Backgrounds */
+  --background-primary: var(--bg-primary);
+  --background-secondary: var(--bg-secondary);
+  --background-secondary-alt: var(--bg-tertiary);
+  --background-modifier-border: rgba(0, 245, 255, 0.1);
+  --background-modifier-hover: var(--bg-hover);
+  
+  /* Text */
+  --text-normal: var(--text-primary);
+  --text-muted: var(--text-secondary);
+  --text-faint: var(--text-muted);
+  --text-accent: var(--cyber-cyan);
+  --text-accent-hover: var(--cyber-pink);
+  
+  /* Interactive elements */
+  --interactive-accent: var(--cyber-pink);
+  --interactive-accent-hover: var(--accent-hover);
+  --interactive-normal: var(--bg-tertiary);
+  --interactive-hover: var(--bg-hover);
+  
+  /* Code */
+  --code-background: #0d1128;
+  --code-normal: var(--cyber-cyan);
+  
+  /* Links */
+  --link-color: var(--cyber-cyan);
+  --link-color-hover: var(--cyber-pink);
+  --link-external-color: var(--cyber-purple);
+  
+  /* Scrollbar */
+  --scrollbar-bg: var(--bg-secondary);
+  --scrollbar-thumb-bg: var(--cyber-pink);
+  
+  /* Borders */
+  --divider-color: rgba(0, 245, 255, 0.15);
+}
+
+/* ====================================
+     CODE BLOCKS - ENHANCED CYBERPUNK
+   ==================================== */
+
+/* Inline code */
+code {
+  background: linear-gradient(135deg, rgba(181, 55, 242, 0.1), rgba(0, 245, 255, 0.1));
+  color: var(--cyber-cyan);
+  border: 1px solid rgba(0, 245, 255, 0.25);
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+  font-size: 0.9em;
+  box-shadow: 0 0 5px rgba(0, 245, 255, 0.1);
+}
+
+/* Code block container */
+.markdown-preview-view pre,
+.markdown-source-view.mod-cm6 .cm-line .HyperMD-codeblock {
+  background: var(--code-background);
+  border: 1px solid rgba(255, 0, 110, 0.4);
+  border-radius: 8px;
+  padding: 0;
+  box-shadow: 
+    0 0 10px rgba(255, 0, 110, 0.15),
+    inset 0 0 20px rgba(0, 245, 255, 0.03);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Code block before pseudo-element (glowing border effect) */
+.markdown-preview-view pre::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--cyber-pink), var(--cyber-cyan), var(--cyber-purple));
+  box-shadow: 0 0 5px rgba(255, 0, 110, 0.3);
+}
+
+/* Code block content */
+.markdown-preview-view pre > code {
+  background: transparent;
+  border: none;
+  box-shadow: none;
+  display: block;
+  padding: 1.5em;
+  color: var(--text-primary);
+  font-family: 'Fira Code', 'JetBrains Mono', 'Courier New', monospace;
+  line-height: 1.6;
+  font-size: 0.95em;
+}
+
+/* Code block language tag */
+.markdown-preview-view pre[class*="language-"]::after {
+  content: attr(class);
+  position: absolute;
+  top: 8px;
+  right: 12px;
+  font-size: 0.75em;
+  color: var(--cyber-pink);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 1px;
+  opacity: 0.7;
+  font-family: 'Fira Code', monospace;
+}
+
+/* Live Preview code blocks */
+.cm-s-obsidian .HyperMD-codeblock {
+  color: var(--text-primary);
+  background: var(--code-background);
+  font-family: 'Fira Code', 'JetBrains Mono', monospace;
+}
+
+/* Code block line numbers (if using plugins) */
+.markdown-preview-view pre .line-number {
+  color: var(--text-muted);
+  opacity: 0.5;
+  margin-right: 1em;
+}
+
+/* ====================================
+           SYNTAX HIGHLIGHTING
+   ==================================== */
+
+.token.comment { color: #6b7394; font-style: italic; }
+.token.string { color: var(--cyber-cyan); }
+.token.keyword { color: var(--cyber-pink); font-weight: 600; }
+.token.function { color: var(--cyber-purple); }
+.token.number { color: var(--cyber-orange); }
+.token.operator { color: var(--text-primary); }
+.token.class-name { color: var(--cyber-purple); }
+.token.boolean { color: var(--cyber-orange); }
+.token.property { color: var(--cyber-cyan); }
+
+/* ====================================
+                HEADERS
+   ==================================== */
+
+.markdown-preview-view h1,
+.markdown-preview-view h2,
+.markdown-preview-view h3,
+.markdown-preview-view h4,
+.markdown-preview-view h5,
+.markdown-preview-view h6 {
+  color: var(--text-primary);
+  font-weight: 700;
+  position: relative;
+}
+
+.markdown-preview-view h1 {
+  color: var(--cyber-pink);
+  font-size: 2em;
+  border-bottom: 2px solid var(--cyber-pink);
+  padding-bottom: 0.3em;
+  text-shadow: 0 0 5px rgba(255, 0, 110, 0.3);
+}
+
+.markdown-preview-view h2 {
+  color: var(--cyber-cyan);
+  font-size: 1.6em;
+  border-bottom: 1px solid rgba(0, 245, 255, 0.3);
+  padding-bottom: 0.3em;
+}
+
+.markdown-preview-view h3 {
+  color: var(--cyber-purple);
+  font-size: 1.3em;
+}
+
+/* ====================================
+                LINKS
+   ==================================== */
+
+a {
+  color: var(--cyber-cyan);
+  text-decoration: none;
+  transition: all 0.2s ease;
+  position: relative;
+}
+
+a:hover {
+  color: var(--cyber-pink);
+  text-shadow: 0 0 4px rgba(255, 0, 110, 0.4);
+}
+
+/* Internal links */
+.internal-link {
+  color: var(--cyber-cyan);
+  border-bottom: 1px solid rgba(0, 245, 255, 0.3);
+}
+
+.internal-link:hover {
+  color: var(--cyber-pink);
+  border-bottom-color: var(--cyber-pink);
+}
+
+/* External links */
+.external-link {
+  color: var(--cyber-purple);
+}
+
+/* ====================================
+               LISTS
+   ==================================== */
+
+ul, ol {
+  padding-left: 2em;
+}
+
+li {
+  margin: 0.3em 0;
+}
+
+/* Bullet points */
+ul > li::marker {
+  color: var(--cyber-pink);
+}
+
+ol > li::marker {
+  color: var(--cyber-cyan);
+  font-weight: 600;
+}
+
+/* Checkboxes */
+.task-list-item-checkbox {
+  appearance: none;
+  width: 18px;
+  height: 18px;
+  border: 2px solid var(--cyber-cyan);
+  border-radius: 3px;
+  background: transparent;
+  cursor: pointer;
+  position: relative;
+}
+
+.task-list-item-checkbox:checked {
+  background: var(--cyber-pink);
+  border-color: var(--cyber-pink);
+  box-shadow: 0 0 5px rgba(255, 0, 110, 0.3);
+}
+
+.task-list-item-checkbox:checked::after {
+  content: '✓';
+  position: absolute;
+  color: white;
+  top: -2px;
+  left: 2px;
+  font-size: 14px;
+}
+
+/* ====================================
+             BLOCKQUOTES
+   ==================================== */
+
+blockquote {
+  border-left: 4px solid var(--cyber-pink);
+  background: linear-gradient(90deg, rgba(255, 0, 110, 0.08), transparent);
+  padding: 1em 1.5em;
+  margin: 1em 0;
+  border-radius: 0 4px 4px 0;
+  box-shadow: 0 0 8px rgba(255, 0, 110, 0.08);
+}
+
+/* ====================================
+               TABLES
+   ==================================== */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1em 0;
+}
+
+thead {
+  background: var(--bg-tertiary);
+  border-bottom: 2px solid var(--cyber-pink);
+}
+
+th {
+  color: var(--cyber-cyan);
+  font-weight: 600;
+  padding: 0.75em;
+  text-align: left;
+}
+
+td {
+  padding: 0.75em;
+  border-bottom: 1px solid var(--divider-color);
+}
+
+tr:hover {
+  background: rgba(255, 0, 110, 0.05);
+}
+
+/* ====================================
+              SCROLLBAR
+   ==================================== */
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--scrollbar-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--scrollbar-thumb-bg);
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(255, 0, 110, 0.3);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--cyber-cyan);
+  box-shadow: 0 0 5px rgba(0, 245, 255, 0.3);
+}
+
+/* ====================================
+                 SIDEBAR
+   ==================================== */
+
+.workspace-leaf {
+  border-right: 1px solid var(--divider-color);
+}
+
+.nav-file-title,
+.nav-folder-title {
+  color: var(--text-secondary);
+  padding: 4px 8px;
+  border-radius: 4px;
+  transition: all 0.2s ease;
+}
+
+.nav-file-title:hover,
+.nav-folder-title:hover {
+  background: var(--bg-hover);
+  color: var(--cyber-cyan);
+}
+
+.nav-file-title.is-active {
+  background: linear-gradient(90deg, rgba(255, 0, 110, 0.2), transparent);
+  color: var(--cyber-pink);
+  border-left: 3px solid var(--cyber-pink);
+}
+
+/* ====================================
+                 TAGS
+   ==================================== */
+
+.tag {
+  background: linear-gradient(135deg, rgba(181, 55, 242, 0.2), rgba(0, 245, 255, 0.2));
+  color: var(--cyber-cyan);
+  border: 1px solid var(--cyber-cyan);
+  border-radius: 12px;
+  padding: 2px 8px;
+  font-size: 0.85em;
+  transition: all 0.2s ease;
+}
+
+.tag:hover {
+  background: linear-gradient(135deg, rgba(255, 0, 110, 0.25), rgba(0, 245, 255, 0.25));
+  box-shadow: 0 0 6px rgba(0, 245, 255, 0.2);
+  border-color: var(--cyber-pink);
+}
+
+/* ====================================
+                BUTTONS
+   ==================================== */
+
+button {
+  background: var(--bg-tertiary);
+  color: var(--text-primary);
+  border: 1px solid var(--cyber-cyan);
+  border-radius: 4px;
+  padding: 6px 12px;
+  transition: all 0.2s ease;
+}
+
+button:hover {
+  background: var(--cyber-pink);
+  border-color: var(--cyber-pink);
+  box-shadow: 0 0 8px rgba(255, 0, 110, 0.3);
+  color: white;
+}
+
+/* Accessibility: Focus indicators for keyboard navigation */
+button:focus-visible,
+a:focus-visible,
+input:focus-visible,
+.clickable-icon:focus-visible {
+  outline: 2px solid var(--cyber-cyan);
+  outline-offset: 2px;
+}
+
+/* Reduce motion for users who prefer it */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ====================================
+            SEARCH
+   ==================================== */
+
+.search-result-file-title {
+  color: var(--cyber-cyan);
+}
+
+.search-result-file-match {
+  background: rgba(255, 0, 110, 0.2);
+  border-left: 2px solid var(--cyber-pink);
+}
+
+/* ====================================
+             GRAPH VIEW
+   ==================================== */
+
+.graph-view.color-fill-tag {
+  color: var(--cyber-purple);
+}
+
+.graph-view.color-fill-attachment {
+  color: var(--cyber-orange);
+}
+
+.graph-view.color-fill-unresolved {
+  color: var(--text-muted);
+}
+
+/* ====================================
+          MOBILE OPTIMIZATIONS
+   ==================================== */
+
+.is-mobile .markdown-preview-view pre > code {
+  font-size: 0.85em;
+  padding: 1em;
+}
+
+.is-mobile code {
+  font-size: 0.85em;
+}
+
+/* ====================================
+        PLUGIN COMPATIBILITY
+   ==================================== */
+
+/* Dataview Plugin */
+.dataview.table-view-table {
+  border: 1px solid var(--divider-color);
+}
+
+.dataview.table-view-table thead {
+  background: var(--bg-tertiary);
+}
+
+.dataview.table-view-table tbody tr:hover {
+  background: rgba(255, 0, 110, 0.05);
+}
+
+/* Calendar Plugin */
+.calendar {
+  border: 1px solid var(--divider-color);
+}
+
+.day {
+  border: 1px solid var(--divider-color);
+}
+
+.day.today {
+  background: rgba(0, 245, 255, 0.1);
+  border-color: var(--cyber-cyan);
+}
+
+.day.active {
+  background: rgba(255, 0, 110, 0.15);
+  color: var(--cyber-pink);
+}
+
+/* Kanban Plugin */
+.kanban-plugin__board {
+  background: var(--bg-primary);
+}
+
+.kanban-plugin__lane {
+  background: var(--bg-secondary);
+  border: 1px solid var(--divider-color);
+  border-radius: 8px;
+}
+
+.kanban-plugin__item {
+  background: var(--bg-tertiary);
+  border: 1px solid rgba(0, 245, 255, 0.2);
+  border-radius: 4px;
+}
+
+.kanban-plugin__item:hover {
+  border-color: var(--cyber-cyan);
+  box-shadow: 0 0 8px rgba(0, 245, 255, 0.2);
+}
+
+/* Excalidraw Plugin */
+.excalidraw {
+  background: var(--bg-primary);
+}
+
+/* Advanced Tables Plugin */
+.advanced-tables-toolbar {
+  background: var(--bg-secondary);
+  border: 1px solid var(--divider-color);
+}
+
+/* Obsidian Git Plugin */
+.git-view-body {
+  background: var(--bg-primary);
+}
+
+/* Outliner Plugin - Better list indentation */
+.cm-hmd-list-indent .cm-tab {
+  color: var(--text-muted);
+}
+
+/* Tasks Plugin */
+.tasks-list-text {
+  color: var(--text-normal);
+}
+
+.task-list-item.is-checked {
+  color: var(--text-muted);
+  text-decoration: line-through;
+}
