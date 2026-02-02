@@ -93,7 +93,7 @@ Tested and optimized for:
 
 ## 📝 Changelog
 
-### v1.1.0 (Latest Update)
+### v1.0.0 (Latest Update)
 - **New Feature**: Neon Beam Cursor (3px width + glow).
 - **New Feature**: CRT Scanlines for Code Blocks.
 - **Improvement**: Fixed file explorer sliding animation bug.
