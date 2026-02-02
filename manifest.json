@@ -3,5 +3,6 @@
   "version": "1.0.0",
   "minAppVersion": "0.16.0",
   "author": "Juhair Islam Sami",
-  "authorUrl": "https://github.com/zoo-hair"
+  "authorUrl": "https://github.com/zoo-hair",
+  "screenshot": "screenshot.png"
 }
